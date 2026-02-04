@@ -20,6 +20,7 @@ The design is modular, separating the hardware driver layer from the application
 The system uses a register-based datapath for password storage. Unlike hard-coded locks, the "Master Key" is stored in parallel registers that can be updated during operation. A 4-bit comparator verifies user input against the current register values in real-time.
 
 ![System Datapath](FPGA_Configurable_Lock/docs/system_architecture.png)
+
 *Figure 1: Datapath showing register logic and comparator flow.*
 
 ### 2. Finite State Machine (FSM)
@@ -31,6 +32,7 @@ Control logic is governed by a Moore Machine architecture to ensure output stabi
 * **S_UNLOCKED:** Access granted state with a hardware timer.
 
 ![State Diagram](FPGA_Configurable_Lock/docs/fsm_state_diagram.png)
+
 *Figure 2: FSM State Transition Diagram.*
 
 ## Verification
@@ -43,6 +45,7 @@ The system was verified using a behavioral testbench (`Top_Level_tb`) covering 2
 4.  **Validation:** Successful unlock using the new user-defined code.
 
 ![Simulation Results](FPGA_Configurable_Lock/docs/simulation_waveforms.png)
+
 *Figure 3: Behavioral simulation waveforms confirming state transitions.*
 
 ## Repository Structure
